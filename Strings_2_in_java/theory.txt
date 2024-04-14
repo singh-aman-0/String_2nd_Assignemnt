@@ -1,0 +1,32 @@
+Answer:-1
+
+strings are immutable by default, meaning once created, their values cannot be changed. However, there's no direct concept of a mutable string in Java's standard library.
+
+But we can achieve similar functionality using StringBuilder or StringBuffer classes. These classes provide methods to modify the contents of the string they hold.
+
+Example:-
+public class MutableStringExample {
+    public static void main(String[] args) {
+        StringBuilder mutableString = new StringBuilder("Hello");
+        
+        System.out.println("Original String: " + mutableString);
+
+        mutableString.append(" World");
+        System.out.println("Appended String: " + mutableString);
+        
+        mutableString.insert(5, ", Java");
+        System.out.println("Modified String: " + mutableString);
+        
+        mutableString.delete(5, 10);
+        System.out.println("Deleted String: " + mutableString);
+    }
+}
+Output:
+
+Original String: Hello
+Appended String: Hello World
+Modified String: Hello, Java World
+Deleted String: HelloWorld
+
+
+
